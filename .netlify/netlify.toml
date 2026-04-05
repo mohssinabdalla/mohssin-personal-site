@@ -8,11 +8,12 @@ redirects = []
 
 [build]
 publish = "/mnt/d/Projects area/Programming projects/Web base/mohssin-personal-site/dist"
-publishOrigin = "ui"
-commandOrigin = "ui"
+publishOrigin = "config"
+commandOrigin = "config"
 command = "npm run build"
 
 [build.environment]
+NODE_VERSION = "20"
 
 [build.processing]
 

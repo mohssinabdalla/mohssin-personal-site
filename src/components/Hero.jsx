@@ -70,25 +70,23 @@ export default function Hero() {
             </div>
           </div>
 
-          {/* Photo placeholder */}
-          <div className="flex-shrink-0">
-            <div className="w-64 h-64 md:w-80 md:h-80 rounded-2xl relative"
+          {/* Photo */}
+          <div className="flex-shrink-0 relative">
+            <div className="w-64 h-64 md:w-80 md:h-80 rounded-2xl overflow-hidden relative"
               style={{
-                background: 'linear-gradient(135deg, rgba(29,78,216,0.2), rgba(96,165,250,0.1))',
                 border: '1px solid rgba(59,130,246,0.2)',
-                boxShadow: '0 0 60px rgba(59,130,246,0.1)',
+                boxShadow: '0 0 60px rgba(59,130,246,0.15)',
               }}>
-              <div className="absolute inset-0 flex flex-col items-center justify-center text-white/30">
-                <svg className="w-16 h-16 mb-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1} d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z" />
-                </svg>
-                <p className="text-xs">Add your photo</p>
-              </div>
-              <div className="absolute -top-2 -right-2 w-8 h-8 rounded-full"
-                style={{ background: 'linear-gradient(135deg, #1d4ed8, #3b82f6)' }} />
-              <div className="absolute -bottom-2 -left-2 w-5 h-5 rounded-full"
-                style={{ background: 'rgba(96,165,250,0.4)' }} />
+              <img
+                src="/mohssin.jpg"
+                alt="Mohssin"
+                className="w-full h-full object-cover object-top"
+              />
             </div>
+            <div className="absolute -top-2 -right-2 w-8 h-8 rounded-full"
+              style={{ background: 'linear-gradient(135deg, #1d4ed8, #3b82f6)' }} />
+            <div className="absolute -bottom-2 -left-2 w-5 h-5 rounded-full"
+              style={{ background: 'rgba(96,165,250,0.4)' }} />
           </div>
 
         </div>
