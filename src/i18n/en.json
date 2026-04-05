@@ -1,0 +1,85 @@
+{
+  "nav": {
+    "about": "About",
+    "whatIDo": "What I Do",
+    "skills": "Skills",
+    "projects": "Projects",
+    "contact": "Contact",
+    "cta": "Let's Talk"
+  },
+  "hero": {
+    "greeting": "Welcome",
+    "name": "My name is Mohssin.",
+    "tagline": "I'm a <strong>Computer Science & AI student</strong> from Sudan, currently studying at <blue>Asia Pacific University</blue> in Malaysia.",
+    "sub": "I build systems that think. From AI-integrated productivity tools to automated personal operating systems — I design the infrastructure that makes everything else work.",
+    "downloadCV": "Download CV",
+    "getInTouch": "Get in Touch",
+    "scrollHint": "SCROLL"
+  },
+  "about": {
+    "label": "About Me",
+    "title": "The Story Behind the Systems",
+    "p1": "In 2023, a war started in Sudan. I lost almost everything — but I didn't lose my direction. That moment made one thing clear: I needed to build something that could move with me, no matter where I ended up.",
+    "p2": "I ended up in Malaysia, studying Computer Science & AI at Asia Pacific University. And I started building.",
+    "p3": "Every system I wanted to create, I found it was possible in Notion. So I started reverse-engineering templates — understanding how they were structured, why they worked, what made them break. Days became hours. Then, once I combined that knowledge with AI? Hours became minutes.",
+    "p4": "That process led me to <strong>PALMS</strong> — my Personal Automated Life Management System. Twenty interconnected databases, five AI agents, and a direct communication channel between AI and Notion via MCP. It's not a project. It's running right now.",
+    "p5": "I'm a CS & AI student who builds real systems. And I want to help others build theirs.",
+    "pillar1Title": "Systems Thinking",
+    "pillar1Desc": "I don't just use tools — I design the structure that makes them work together.",
+    "pillar2Title": "AI-First Approach",
+    "pillar2Desc": "Every system I build is designed for AI to operate within it, not just alongside it.",
+    "pillar3Title": "Integration Mindset",
+    "pillar3Desc": "The real power isn't in any single tool. It's in how they connect.",
+    "stat1Value": "20+",
+    "stat1Label": "Notion Databases",
+    "stat2Value": "5+",
+    "stat2Label": "AI Agents Built",
+    "stat3Value": "3+",
+    "stat3Label": "Years with Notion"
+  },
+  "whatIDo": {
+    "label": "What I Do",
+    "title": "Building Systems That Think",
+    "subtitle": "Not just tools. Not just templates. Infrastructure that connects, automates, and evolves.",
+    "service1Title": "Notion Systems Design",
+    "service1Desc": "Designing interconnected database structures that grow with your work — not against it. From personal wikis to full team operating systems.",
+    "service2Title": "AI Integration",
+    "service2Desc": "Connecting AI models directly to your tools via MCP and APIs — so your systems don't just store information, they act on it.",
+    "service3Title": "Workflow Automation",
+    "service3Desc": "Eliminating the manual work between your tools. Tasks that move themselves, updates that happen automatically, context that never gets lost.",
+    "service4Title": "Personal OS Building",
+    "service4Desc": "Building the full-stack life management system — study, business, content, health, finance — running together as one integrated architecture."
+  },
+  "skills": {
+    "label": "Skills",
+    "title": "Tools & Knowledge",
+    "subtitle": "The stack behind the systems.",
+    "group1": "Notion & Productivity",
+    "group2": "AI & Automation",
+    "group3": "Programming",
+    "group4": "Languages",
+    "skills1": ["Notion", "Database Design", "Template Building", "Workflow Design", "Notion API"],
+    "skills2": ["MCP (Model Context Protocol)", "Multi-Agent Systems", "Claude API", "Prompt Engineering", "AI Integration"],
+    "skills3": ["Python", "JavaScript", "React", "HTML/CSS", "Git"],
+    "skills4": ["Arabic (Native)", "English (Professional)", "Learning: Malay"]
+  },
+  "projects": {
+    "label": "Projects",
+    "title": "What I've Built",
+    "subtitle": "More coming soon.",
+    "featured": "Featured",
+    "private": "Private system",
+    "github": "GitHub",
+    "liveDemo": "Live Demo",
+    "palmsTitle": "PALMS — Personal Automated Life Management System",
+    "palmsDesc": "A 20-database Notion architecture covering study, business, content, health, and finance — powered by 5 AI agents connected via MCP (Model Context Protocol). Agents read across all databases and return structured audits, priorities, and recommendations. Running live."
+  },
+  "contact": {
+    "label": "Contact",
+    "title": "Let's Build Something",
+    "subtitle": "Whether you want to talk systems, collaboration, or just want to connect — I'm always open to a good conversation.",
+    "email": "Send an Email",
+    "linkedin": "LinkedIn",
+    "footer": "Built by Mohssin"
+  }
+}

@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Cairo:wght@300;400;500;600;700;800&display=swap');
 
 @tailwind base;
 @tailwind components;
@@ -13,6 +13,11 @@
     background-color: #0a0d1a;
     color: #ffffff;
     font-family: 'Inter', system-ui, sans-serif;
+  }
+
+  [dir="rtl"] body,
+  [dir="rtl"] {
+    font-family: 'Cairo', system-ui, sans-serif;
   }
 
   ::selection {
