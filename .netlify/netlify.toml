@@ -1,16 +1,15 @@
+functionsDirectory = "/mnt/d/Projects area/Programming projects/Web base/mohssin-personal-site/netlify/functions"
+functionsDirectoryOrigin = "default"
 plugins = []
 headers = []
 redirects = []
-
-[functions]
-
-[functions."*"]
 
 [build]
 publish = "/mnt/d/Projects area/Programming projects/Web base/mohssin-personal-site/dist"
 publishOrigin = "config"
 commandOrigin = "config"
 command = "npm run build"
+functions = "/mnt/d/Projects area/Programming projects/Web base/mohssin-personal-site/netlify/functions"
 
 [build.environment]
 NODE_VERSION = "20"
@@ -26,3 +25,7 @@ NODE_VERSION = "20"
 [build.processing.js]
 
 [build.services]
+
+[functions]
+
+[functions."*"]

@@ -41,7 +41,11 @@ export default function Hero() {
             </p>
 
             <div className="flex flex-wrap gap-4">
-              <a href="mailto:mohssinabadalla1@gmail.com" className="btn-primary">
+              <a
+                href="#contact"
+                onClick={(e) => { e.preventDefault(); document.getElementById('contact')?.scrollIntoView({ behavior: 'smooth' }) }}
+                className="btn-primary"
+              >
                 {t('hero.getInTouch')}
               </a>
             </div>
