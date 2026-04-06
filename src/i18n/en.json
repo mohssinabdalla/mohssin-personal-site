@@ -12,7 +12,6 @@
     "name": "My name is Mohssin.",
     "tagline": "I'm a <strong>Computer Science & AI student</strong> from Sudan, currently studying at <blue>Asia Pacific University</blue> in Malaysia.",
     "sub": "I build systems that think. From AI-integrated productivity tools to automated personal operating systems — I design the infrastructure that makes everything else work.",
-    "downloadCV": "Download CV",
     "getInTouch": "Get in Touch",
     "scrollHint": "SCROLL"
   },
@@ -79,7 +78,6 @@
     "title": "Let's Build Something",
     "subtitle": "Whether you want to talk systems, collaboration, or just want to connect — I'm always open to a good conversation.",
     "email": "Send an Email",
-    "linkedin": "LinkedIn",
     "footer": "Built by Mohssin"
   }
 }
