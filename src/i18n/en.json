@@ -83,7 +83,7 @@
     "messagePlaceholder": "Your message...",
     "send": "Send Message",
     "sending": "Sending...",
-    "successMsg": "Message sent! I'll get back to you soon.",
+    "successMsg": "Message sent successfully! Mohssin will be in touch soon.",
     "errorMsg": "Something went wrong. Please try again or email me directly.",
     "footer": "Built by Mohssin"
   }
