@@ -114,7 +114,7 @@ export default function Contact() {
             placeholder={t('contact.messagePlaceholder')}
             required
             rows={5}
-            className="w-full px-4 py-3 rounded-xl text-white text-sm outline-none transition-all duration-200 placeholder-white/30 resize-none"
+            className="w-full px-4 py-3 rounded-xl text-sm outline-none transition-all duration-200 placeholder-slate-400 dark:placeholder-white/30 text-slate-900 dark:text-white resize-none"
             style={inputStyle}
             onFocus={focusStyle}
             onBlur={blurStyle}
