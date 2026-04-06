@@ -32,7 +32,7 @@ export default function About() {
             <p>
               <Trans
                 i18nKey="about.p4"
-                components={{ strong: <span className="text-white font-semibold" /> }}
+                components={{ strong: <span className="text-slate-900 dark:text-white font-semibold" /> }}
               />
             </p>
             <p>{t('about.p5')}</p>

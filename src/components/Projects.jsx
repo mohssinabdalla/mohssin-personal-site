@@ -1,4 +1,5 @@
 import { useTranslation } from 'react-i18next'
+import { useThemeContext } from '../App'
 
 // ─── ADD NEW PROJECTS HERE ────────────────────────────────────────────────────
 // To add a new project, add an object to this array:
@@ -24,12 +25,15 @@ const projects = [
 
 function ProjectCard({ project }) {
   const { t } = useTranslation()
+  const { theme } = useThemeContext()
 
   return (
     <div className="card group relative overflow-hidden"
       style={project.featured ? {
         border: '1px solid rgba(59,130,246,0.25)',
-        background: 'linear-gradient(135deg, rgba(29,78,216,0.08), rgba(15,20,36,1))',
+        background: theme === 'dark'
+          ? 'linear-gradient(135deg, rgba(29,78,216,0.08), rgba(15,20,36,1))'
+          : 'linear-gradient(135deg, rgba(59,130,246,0.06), rgba(248,250,252,1))',
       } : {}}>
 
       {project.featured && (

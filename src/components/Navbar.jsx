@@ -52,10 +52,10 @@ export default function Navbar() {
         <a
           href="#"
           onClick={(e) => { e.preventDefault(); window.scrollTo({ top: 0, behavior: 'smooth' }) }}
-          className="w-8 h-8 rounded-lg flex items-center justify-center text-sm font-bold text-white/70 hover:text-white transition-colors"
+          className="w-8 h-8 rounded-lg flex items-center justify-center text-sm font-bold text-slate-600 dark:text-white/70 hover:text-slate-900 dark:hover:text-white transition-colors"
           style={{
-            background: 'rgba(255,255,255,0.06)',
-            border: '1px solid rgba(255,255,255,0.08)',
+            background: theme === 'dark' ? 'rgba(255,255,255,0.06)' : 'rgba(0,0,0,0.06)',
+            border: theme === 'dark' ? '1px solid rgba(255,255,255,0.08)' : '1px solid rgba(0,0,0,0.08)',
           }}
         >
           M
@@ -86,10 +86,10 @@ export default function Navbar() {
           {/* Theme toggle */}
           <button
             onClick={toggleTheme}
-            className="w-8 h-8 rounded-full flex items-center justify-center text-white/40 dark:text-white/40 hover:text-white/70 transition-all duration-200"
+            className="w-8 h-8 rounded-full flex items-center justify-center text-slate-500 dark:text-white/50 hover:text-slate-800 dark:hover:text-white/80 transition-all duration-200"
             style={{
-              background: 'rgba(128,128,128,0.08)',
-              border: '1px solid rgba(128,128,128,0.12)',
+              background: theme === 'dark' ? 'rgba(255,255,255,0.06)' : 'rgba(0,0,0,0.06)',
+              border: theme === 'dark' ? '1px solid rgba(255,255,255,0.08)' : '1px solid rgba(0,0,0,0.08)',
             }}
           >
             {theme === 'dark' ? (

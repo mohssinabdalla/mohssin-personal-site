@@ -152,7 +152,7 @@ export default function Contact() {
         <div className="mt-16 relative">
           <div className="w-full h-px mb-8"
             style={{ background: 'linear-gradient(90deg, transparent, rgba(59,130,246,0.2), transparent)' }} />
-          <p className="text-center text-slate-300 dark:text-white/20 text-sm">
+          <p className="text-center text-slate-400 dark:text-white/20 text-sm">
             {t('contact.footer')} · {new Date().getFullYear()}
           </p>
         </div>

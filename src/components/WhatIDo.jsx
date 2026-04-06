@@ -59,8 +59,8 @@ export default function WhatIDo() {
         <div className="grid md:grid-cols-2 gap-6">
           {services.map((s) => (
             <div key={s.titleKey} className="card group">
-              <div className="w-12 h-12 rounded-xl flex items-center justify-center mb-5 text-blue-400 transition-all duration-300 group-hover:scale-110"
-                style={{ background: 'rgba(59,130,246,0.1)', border: '1px solid rgba(59,130,246,0.2)' }}>
+              <div className="w-12 h-12 rounded-xl flex items-center justify-center mb-5 text-blue-500 transition-all duration-300 group-hover:scale-110"
+                style={{ background: 'rgba(59,130,246,0.12)', border: '1px solid rgba(59,130,246,0.25)' }}>
                 {s.icon}
               </div>
               <h3 className="text-slate-900 dark:text-white font-semibold text-lg mb-2">{t(s.titleKey)}</h3>

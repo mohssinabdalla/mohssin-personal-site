@@ -30,7 +30,7 @@ export default function Hero() {
               <Trans
                 i18nKey="hero.tagline"
                 components={{
-                  strong: <span className="text-white font-semibold" />,
+                  strong: <span className="text-slate-900 dark:text-white font-semibold" />,
                   blue: <span className="text-blue-400" />,
                 }}
               />
