@@ -38,8 +38,9 @@ export default function Contact() {
   }
 
   const inputStyle = {
-    background: 'rgba(255,255,255,0.04)',
-    border: '1px solid rgba(255,255,255,0.08)',
+    background: 'rgba(0,0,0,0.03)',
+    border: '1px solid rgba(0,0,0,0.08)',
+    color: 'inherit',
   }
 
   const focusStyle = (e) => (e.target.style.borderColor = 'rgba(59,130,246,0.5)')
@@ -54,9 +55,9 @@ export default function Contact() {
           style={{ background: 'radial-gradient(circle, rgba(59,130,246,0.08) 0%, transparent 70%)', filter: 'blur(40px)' }} />
 
         <div className="text-center mb-12 relative">
-          <p className="text-blue-400 text-sm font-medium tracking-widest uppercase mb-3">{t('contact.label')}</p>
-          <h2 className="text-3xl md:text-4xl font-bold text-white mb-5">{t('contact.title')}</h2>
-          <p className="text-white/50 leading-relaxed">{t('contact.subtitle')}</p>
+          <p className="text-blue-500 text-sm font-medium tracking-widest uppercase mb-3">{t('contact.label')}</p>
+          <h2 className="text-3xl md:text-4xl font-bold text-slate-900 dark:text-white mb-5">{t('contact.title')}</h2>
+          <p className="text-slate-500 dark:text-white/50 leading-relaxed">{t('contact.subtitle')}</p>
         </div>
 
         {/* Hidden form for Netlify to detect at build time */}
@@ -151,7 +152,7 @@ export default function Contact() {
         <div className="mt-16 relative">
           <div className="w-full h-px mb-8"
             style={{ background: 'linear-gradient(90deg, transparent, rgba(59,130,246,0.2), transparent)' }} />
-          <p className="text-center text-white/20 text-sm">
+          <p className="text-center text-slate-300 dark:text-white/20 text-sm">
             {t('contact.footer')} · {new Date().getFullYear()}
           </p>
         </div>

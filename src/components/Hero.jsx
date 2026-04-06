@@ -16,17 +16,17 @@ export default function Hero() {
 
           {/* Text */}
           <div className="flex-1">
-            <p className="text-blue-400 text-sm font-medium tracking-widest uppercase mb-6">
+            <p className="text-blue-500 text-sm font-medium tracking-widest uppercase mb-6">
               {t('hero.greeting')}
             </p>
 
-            <h1 className="text-4xl md:text-6xl font-bold leading-tight mb-6">
+            <h1 className="text-4xl md:text-6xl font-bold leading-tight mb-6 text-slate-900 dark:text-white">
               <Trans i18nKey="hero.name">
                 My name is <span className="text-gradient">Mohssin.</span>
               </Trans>
             </h1>
 
-            <p className="text-white/70 text-lg md:text-xl leading-relaxed mb-4">
+            <p className="text-slate-600 dark:text-white/70 text-lg md:text-xl leading-relaxed mb-4">
               <Trans
                 i18nKey="hero.tagline"
                 components={{
@@ -36,7 +36,7 @@ export default function Hero() {
               />
             </p>
 
-            <p className="text-white/50 text-base leading-relaxed mb-10">
+            <p className="text-slate-500 dark:text-white/50 text-base leading-relaxed mb-10">
               {t('hero.sub')}
             </p>
 
@@ -74,7 +74,7 @@ export default function Hero() {
 
         {/* Scroll hint */}
         <div className="flex justify-center mt-16">
-          <div className="flex flex-col items-center gap-2 text-white/20 animate-bounce">
+          <div className="flex flex-col items-center gap-2 text-slate-300 dark:text-white/20 animate-bounce">
             <span className="text-xs tracking-widest">{t('hero.scrollHint')}</span>
             <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
               <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />

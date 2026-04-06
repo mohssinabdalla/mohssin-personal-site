@@ -47,13 +47,13 @@ export default function WhatIDo() {
   const { t } = useTranslation()
 
   return (
-    <section id="what-i-do" className="py-24" style={{ background: 'rgba(15,20,36,0.5)' }}>
+    <section id="what-i-do" className="py-24 bg-slate-50 dark:bg-[rgba(15,20,36,0.5)]">
       <div className="max-w-6xl mx-auto px-6">
 
         <div className="text-center mb-16">
-          <p className="text-blue-400 text-sm font-medium tracking-widest uppercase mb-3">{t('whatIDo.label')}</p>
-          <h2 className="text-3xl md:text-4xl font-bold text-white">{t('whatIDo.title')}</h2>
-          <p className="text-white/40 mt-4 max-w-xl mx-auto text-sm leading-relaxed">{t('whatIDo.subtitle')}</p>
+          <p className="text-blue-500 text-sm font-medium tracking-widest uppercase mb-3">{t('whatIDo.label')}</p>
+          <h2 className="text-3xl md:text-4xl font-bold text-slate-900 dark:text-white">{t('whatIDo.title')}</h2>
+          <p className="text-slate-400 dark:text-white/40 mt-4 max-w-xl mx-auto text-sm leading-relaxed">{t('whatIDo.subtitle')}</p>
         </div>
 
         <div className="grid md:grid-cols-2 gap-6">
@@ -63,8 +63,8 @@ export default function WhatIDo() {
                 style={{ background: 'rgba(59,130,246,0.1)', border: '1px solid rgba(59,130,246,0.2)' }}>
                 {s.icon}
               </div>
-              <h3 className="text-white font-semibold text-lg mb-2">{t(s.titleKey)}</h3>
-              <p className="text-white/50 text-sm leading-relaxed mb-4">{t(s.descKey)}</p>
+              <h3 className="text-slate-900 dark:text-white font-semibold text-lg mb-2">{t(s.titleKey)}</h3>
+              <p className="text-slate-500 dark:text-white/50 text-sm leading-relaxed mb-4">{t(s.descKey)}</p>
               <div className="flex flex-wrap gap-2">
                 {s.tags.map((tag) => (
                   <span key={tag} className="text-xs px-3 py-1 rounded-full text-blue-400"

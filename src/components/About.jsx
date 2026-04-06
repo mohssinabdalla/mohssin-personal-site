@@ -20,12 +20,12 @@ export default function About() {
       <div className="max-w-6xl mx-auto px-6">
 
         <div className="text-center mb-16">
-          <p className="text-blue-400 text-sm font-medium tracking-widest uppercase mb-3">{t('about.label')}</p>
-          <h2 className="text-3xl md:text-4xl font-bold text-white">{t('about.title')}</h2>
+          <p className="text-blue-500 text-sm font-medium tracking-widest uppercase mb-3">{t('about.label')}</p>
+          <h2 className="text-3xl md:text-4xl font-bold text-slate-900 dark:text-white">{t('about.title')}</h2>
         </div>
 
         <div className="grid md:grid-cols-2 gap-12 items-center mb-20">
-          <div className="space-y-5 text-white/60 leading-relaxed">
+          <div className="space-y-5 text-slate-500 dark:text-white/60 leading-relaxed">
             <p>{t('about.p1')}</p>
             <p>{t('about.p2')}</p>
             <p>{t('about.p3')}</p>
@@ -43,8 +43,8 @@ export default function About() {
               <div key={p.titleKey} className="card flex gap-4 items-start">
                 <span className="text-2xl mt-0.5">{p.icon}</span>
                 <div>
-                  <h3 className="text-white font-semibold mb-1">{t(p.titleKey)}</h3>
-                  <p className="text-white/50 text-sm leading-relaxed">{t(p.descKey)}</p>
+                  <h3 className="text-slate-900 dark:text-white font-semibold mb-1">{t(p.titleKey)}</h3>
+                  <p className="text-slate-500 dark:text-white/50 text-sm leading-relaxed">{t(p.descKey)}</p>
                 </div>
               </div>
             ))}
@@ -60,7 +60,7 @@ export default function About() {
           {stats.map((s) => (
             <div key={s.labelKey} className="text-center">
               <p className="text-3xl md:text-4xl font-bold text-gradient mb-1">{t(s.valueKey)}</p>
-              <p className="text-white/50 text-sm">{t(s.labelKey)}</p>
+              <p className="text-slate-500 dark:text-white/50 text-sm">{t(s.labelKey)}</p>
             </div>
           ))}
         </div>

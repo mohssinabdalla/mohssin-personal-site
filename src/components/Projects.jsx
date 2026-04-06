@@ -39,10 +39,10 @@ function ProjectCard({ project }) {
         </span>
       )}
 
-      <h3 className="text-white font-semibold text-lg mb-3 pe-20 leading-snug">
+      <h3 className="text-slate-900 dark:text-white font-semibold text-lg mb-3 pe-20 leading-snug">
         {t(project.titleKey)}
       </h3>
-      <p className="text-white/50 text-sm leading-relaxed mb-5">
+      <p className="text-slate-500 dark:text-white/50 text-sm leading-relaxed mb-5">
         {t(project.descKey)}
       </p>
 
@@ -65,7 +65,7 @@ function ProjectCard({ project }) {
             {t('projects.github')}
           </a>
         ) : (
-          <span className="text-xs text-white/20 px-4 py-2">{t('projects.private')}</span>
+          <span className="text-xs text-slate-300 dark:text-white/20 px-4 py-2">{t('projects.private')}</span>
         )}
         {project.liveUrl && (
           <a href={project.liveUrl} target="_blank" rel="noreferrer"
@@ -85,13 +85,13 @@ export default function Projects() {
   const { t } = useTranslation()
 
   return (
-    <section id="projects" className="py-24" style={{ background: 'rgba(15,20,36,0.5)' }}>
+    <section id="projects" className="py-24 bg-slate-50 dark:bg-[rgba(15,20,36,0.5)]">
       <div className="max-w-6xl mx-auto px-6">
 
         <div className="text-center mb-16">
-          <p className="text-blue-400 text-sm font-medium tracking-widest uppercase mb-3">{t('projects.label')}</p>
-          <h2 className="text-3xl md:text-4xl font-bold text-white">{t('projects.title')}</h2>
-          <p className="text-white/40 mt-4 text-sm">{t('projects.subtitle')}</p>
+          <p className="text-blue-500 text-sm font-medium tracking-widest uppercase mb-3">{t('projects.label')}</p>
+          <h2 className="text-3xl md:text-4xl font-bold text-slate-900 dark:text-white">{t('projects.title')}</h2>
+          <p className="text-slate-400 dark:text-white/40 mt-4 text-sm">{t('projects.subtitle')}</p>
         </div>
 
         <div className="grid md:grid-cols-2 gap-6">
