@@ -1,4 +1,4 @@
-import { useState } from 'react'
+import { useState, useEffect } from 'react'
 import { useTranslation } from 'react-i18next'
 
 const INITIAL = { name: '', email: '', message: '' }
@@ -7,6 +7,14 @@ export default function Contact() {
   const { t } = useTranslation()
   const [form, setForm] = useState(INITIAL)
   const [status, setStatus] = useState('idle') // idle | sending | success | error
+
+  // Auto-dismiss success message after 5 seconds
+  useEffect(() => {
+    if (status === 'success') {
+      const timer = setTimeout(() => setStatus('idle'), 5000)
+      return () => clearTimeout(timer)
+    }
+  }, [status])
 
   const handleChange = (e) => {
     setForm((prev) => ({ ...prev, [e.target.name]: e.target.value }))
@@ -80,7 +88,7 @@ export default function Contact() {
               onChange={handleChange}
               placeholder={t('contact.namePlaceholder')}
               required
-              className="w-full px-4 py-3 rounded-xl text-white text-sm outline-none transition-all duration-200 placeholder-white/30"
+              className="w-full px-4 py-3 rounded-xl text-sm outline-none transition-all duration-200 placeholder-slate-400 dark:placeholder-white/30 text-slate-900 dark:text-white"
               style={inputStyle}
               onFocus={focusStyle}
               onBlur={blurStyle}
@@ -92,7 +100,7 @@ export default function Contact() {
               onChange={handleChange}
               placeholder={t('contact.emailPlaceholder')}
               required
-              className="w-full px-4 py-3 rounded-xl text-white text-sm outline-none transition-all duration-200 placeholder-white/30"
+              className="w-full px-4 py-3 rounded-xl text-sm outline-none transition-all duration-200 placeholder-slate-400 dark:placeholder-white/30 text-slate-900 dark:text-white"
               style={inputStyle}
               onFocus={focusStyle}
               onBlur={blurStyle}
