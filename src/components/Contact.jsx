@@ -17,10 +17,13 @@ export default function Contact() {
     setStatus('sending')
 
     try {
-      const res = await fetch('/api/send-email', {
+      const res = await fetch('/', {
         method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify(form),
+        headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
+        body: new URLSearchParams({
+          'form-name': 'contact',
+          ...form,
+        }).toString(),
       })
 
       if (res.ok) {
@@ -33,6 +36,14 @@ export default function Contact() {
       setStatus('error')
     }
   }
+
+  const inputStyle = {
+    background: 'rgba(255,255,255,0.04)',
+    border: '1px solid rgba(255,255,255,0.08)',
+  }
+
+  const focusStyle = (e) => (e.target.style.borderColor = 'rgba(59,130,246,0.5)')
+  const blurStyle = (e) => (e.target.style.borderColor = 'rgba(255,255,255,0.08)')
 
   return (
     <section id="contact" className="py-24 relative">
@@ -48,44 +59,43 @@ export default function Contact() {
           <p className="text-white/50 leading-relaxed">{t('contact.subtitle')}</p>
         </div>
 
-        {/* Form */}
+        {/* Hidden form for Netlify to detect at build time */}
+        <form name="contact" data-netlify="true" netlify-honeypot="bot-field" hidden>
+          <input type="text" name="name" />
+          <input type="email" name="email" />
+          <textarea name="message" />
+        </form>
+
+        {/* Visible form */}
         <form onSubmit={handleSubmit} className="relative space-y-4">
+          <input type="hidden" name="form-name" value="contact" />
+          <p hidden><input name="bot-field" /></p>
 
           <div className="grid sm:grid-cols-2 gap-4">
-            <div>
-              <input
-                type="text"
-                name="name"
-                value={form.name}
-                onChange={handleChange}
-                placeholder={t('contact.namePlaceholder')}
-                required
-                className="w-full px-4 py-3 rounded-xl text-white text-sm outline-none transition-all duration-200 placeholder-white/30"
-                style={{
-                  background: 'rgba(255,255,255,0.04)',
-                  border: '1px solid rgba(255,255,255,0.08)',
-                }}
-                onFocus={(e) => e.target.style.borderColor = 'rgba(59,130,246,0.5)'}
-                onBlur={(e) => e.target.style.borderColor = 'rgba(255,255,255,0.08)'}
-              />
-            </div>
-            <div>
-              <input
-                type="email"
-                name="email"
-                value={form.email}
-                onChange={handleChange}
-                placeholder={t('contact.emailPlaceholder')}
-                required
-                className="w-full px-4 py-3 rounded-xl text-white text-sm outline-none transition-all duration-200 placeholder-white/30"
-                style={{
-                  background: 'rgba(255,255,255,0.04)',
-                  border: '1px solid rgba(255,255,255,0.08)',
-                }}
-                onFocus={(e) => e.target.style.borderColor = 'rgba(59,130,246,0.5)'}
-                onBlur={(e) => e.target.style.borderColor = 'rgba(255,255,255,0.08)'}
-              />
-            </div>
+            <input
+              type="text"
+              name="name"
+              value={form.name}
+              onChange={handleChange}
+              placeholder={t('contact.namePlaceholder')}
+              required
+              className="w-full px-4 py-3 rounded-xl text-white text-sm outline-none transition-all duration-200 placeholder-white/30"
+              style={inputStyle}
+              onFocus={focusStyle}
+              onBlur={blurStyle}
+            />
+            <input
+              type="email"
+              name="email"
+              value={form.email}
+              onChange={handleChange}
+              placeholder={t('contact.emailPlaceholder')}
+              required
+              className="w-full px-4 py-3 rounded-xl text-white text-sm outline-none transition-all duration-200 placeholder-white/30"
+              style={inputStyle}
+              onFocus={focusStyle}
+              onBlur={blurStyle}
+            />
           </div>
 
           <textarea
@@ -96,12 +106,9 @@ export default function Contact() {
             required
             rows={5}
             className="w-full px-4 py-3 rounded-xl text-white text-sm outline-none transition-all duration-200 placeholder-white/30 resize-none"
-            style={{
-              background: 'rgba(255,255,255,0.04)',
-              border: '1px solid rgba(255,255,255,0.08)',
-            }}
-            onFocus={(e) => e.target.style.borderColor = 'rgba(59,130,246,0.5)'}
-            onBlur={(e) => e.target.style.borderColor = 'rgba(255,255,255,0.08)'}
+            style={inputStyle}
+            onFocus={focusStyle}
+            onBlur={blurStyle}
           />
 
           <button
@@ -127,7 +134,6 @@ export default function Contact() {
             )}
           </button>
 
-          {/* Feedback */}
           {status === 'success' && (
             <div className="text-center py-3 px-4 rounded-xl text-sm text-green-400"
               style={{ background: 'rgba(34,197,94,0.08)', border: '1px solid rgba(34,197,94,0.2)' }}>
@@ -140,10 +146,8 @@ export default function Contact() {
               {t('contact.errorMsg')}
             </div>
           )}
-
         </form>
 
-        {/* Footer */}
         <div className="mt-16 relative">
           <div className="w-full h-px mb-8"
             style={{ background: 'linear-gradient(90deg, transparent, rgba(59,130,246,0.2), transparent)' }} />
