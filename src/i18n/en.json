@@ -78,6 +78,13 @@
     "title": "Let's Build Something",
     "subtitle": "Whether you want to talk systems, collaboration, or just want to connect — I'm always open to a good conversation.",
     "email": "Send an Email",
+    "namePlaceholder": "Your name",
+    "emailPlaceholder": "Your email",
+    "messagePlaceholder": "Your message...",
+    "send": "Send Message",
+    "sending": "Sending...",
+    "successMsg": "Message sent! I'll get back to you soon.",
+    "errorMsg": "Something went wrong. Please try again or email me directly.",
     "footer": "Built by Mohssin"
   }
 }
