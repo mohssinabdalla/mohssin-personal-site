@@ -8,6 +8,8 @@ export default function Skills() {
     { groupKey: 'skills.group2', skillsKey: 'skills.skills2' },
     { groupKey: 'skills.group3', skillsKey: 'skills.skills3' },
     { groupKey: 'skills.group4', skillsKey: 'skills.skills4' },
+    { groupKey: 'skills.group5', skillsKey: 'skills.skills5' },
+    { groupKey: 'skills.group6', skillsKey: 'skills.skills6' },
   ]
 
   return (

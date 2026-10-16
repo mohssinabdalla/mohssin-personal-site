@@ -14,6 +14,7 @@ export default function Navbar() {
     { key: 'nav.whatIDo', id: 'what-i-do' },
     { key: 'nav.skills', id: 'skills' },
     { key: 'nav.projects', id: 'projects' },
+    { key: 'nav.education', id: 'education' },
     { key: 'nav.contact', id: 'contact' },
   ]
 

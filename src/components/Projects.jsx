@@ -6,20 +6,55 @@ import { useThemeContext } from '../App'
 // {
 //   titleKey: 'projects.yourProjectTitle',   ← add key to en.json + ar.json
 //   descKey:  'projects.yourProjectDesc',    ← add key to en.json + ar.json
+//   metaKey:  'projects.yourProjectMeta',    ← short line, e.g. "APU · Aug 2026"
 //   tags: ['Tag1', 'Tag2'],                  ← tags stay in English
 //   githubUrl: 'https://github.com/...',     ← or null
 //   liveUrl: 'https://...',                  ← or null
-//   featured: false,
+//   noteKey: 'projects.private',             ← shown when there is no GitHub link
+//   featured: false,                         ← featured cards span the full width
 // }
 // ──────────────────────────────────────────────────────────────────────────────
 const projects = [
   {
+    titleKey: 'projects.zadTitle',
+    descKey: 'projects.zadDesc',
+    metaKey: 'projects.zadMeta',
+    tags: ['Next.js', 'TypeScript', 'Supabase', 'PostgreSQL', 'Row-Level Security', 'Vercel'],
+    githubUrl: null,
+    liveUrl: 'https://zadshare.com',
+    liveLabelKey: 'projects.visitZad',
+    noteKey: 'projects.privateRepo',
+    featured: true,
+  },
+  {
     titleKey: 'projects.palmsTitle',
     descKey: 'projects.palmsDesc',
+    metaKey: 'projects.palmsMeta',
     tags: ['Notion', 'MCP', 'AI Agents', 'Systems Design', 'Claude API'],
     githubUrl: null,
     liveUrl: null,
-    featured: true,
+    noteKey: 'projects.private',
+    featured: false,
+  },
+  {
+    titleKey: 'projects.chatbotTitle',
+    descKey: 'projects.chatbotDesc',
+    metaKey: 'projects.chatbotMeta',
+    tags: ['LLM', 'Chatbot', 'Google Sheets', 'API Workflows'],
+    githubUrl: null,
+    liveUrl: null,
+    noteKey: 'projects.universityProject',
+    featured: false,
+  },
+  {
+    titleKey: 'projects.codecampTitle',
+    descKey: 'projects.codecampDesc',
+    metaKey: 'projects.codecampMeta',
+    tags: ['OOP', 'Desktop App', 'Team Project'],
+    githubUrl: null,
+    liveUrl: null,
+    noteKey: 'projects.universityProject',
+    featured: false,
   },
 ]
 
@@ -28,7 +63,7 @@ function ProjectCard({ project }) {
   const { theme } = useThemeContext()
 
   return (
-    <div className="card group relative overflow-hidden"
+    <div className={`card group relative overflow-hidden flex flex-col${project.featured ? ' md:col-span-3' : ''}`}
       style={project.featured ? {
         border: '1px solid rgba(59,130,246,0.25)',
         background: theme === 'dark'
@@ -43,10 +78,13 @@ function ProjectCard({ project }) {
         </span>
       )}
 
-      <h3 className="text-slate-900 dark:text-white font-semibold text-lg mb-3 pe-20 leading-snug">
+      {project.metaKey && (
+        <p className="text-blue-500 text-xs font-medium tracking-wide mb-2">{t(project.metaKey)}</p>
+      )}
+      <h3 className={`text-slate-900 dark:text-white font-semibold mb-3 pe-20 leading-snug ${project.featured ? 'text-xl md:text-2xl' : 'text-lg'}`}>
         {t(project.titleKey)}
       </h3>
-      <p className="text-slate-500 dark:text-white/50 text-sm leading-relaxed mb-5">
+      <p className="text-slate-500 dark:text-white/50 text-sm leading-relaxed mb-5 flex-1">
         {t(project.descKey)}
       </p>
 
@@ -59,7 +97,7 @@ function ProjectCard({ project }) {
         ))}
       </div>
 
-      <div className="flex gap-3">
+      <div className="flex flex-wrap gap-3">
         {project.githubUrl ? (
           <a href={project.githubUrl} target="_blank" rel="noreferrer"
             className="btn-outline text-xs px-4 py-2 flex items-center gap-2">
@@ -69,7 +107,7 @@ function ProjectCard({ project }) {
             {t('projects.github')}
           </a>
         ) : (
-          <span className="text-xs text-slate-300 dark:text-white/20 px-4 py-2">{t('projects.private')}</span>
+          <span className="text-xs text-slate-400 dark:text-white/30 px-4 py-2">{t(project.noteKey ?? 'projects.private')}</span>
         )}
         {project.liveUrl && (
           <a href={project.liveUrl} target="_blank" rel="noreferrer"
@@ -77,7 +115,7 @@ function ProjectCard({ project }) {
             <svg className="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
               <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
             </svg>
-            {t('projects.liveDemo')}
+            {t(project.liveLabelKey ?? 'projects.liveDemo')}
           </a>
         )}
       </div>
@@ -98,7 +136,7 @@ export default function Projects() {
           <p className="text-slate-400 dark:text-white/40 mt-4 text-sm">{t('projects.subtitle')}</p>
         </div>
 
-        <div className="grid md:grid-cols-2 gap-6">
+        <div className="grid md:grid-cols-3 gap-6">
           {projects.map((p) => (
             <ProjectCard key={p.titleKey} project={p} />
           ))}

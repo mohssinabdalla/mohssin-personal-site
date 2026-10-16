@@ -7,6 +7,7 @@ import About from './components/About'
 import WhatIDo from './components/WhatIDo'
 import Skills from './components/Skills'
 import Projects from './components/Projects'
+import Education from './components/Education'
 import Contact from './components/Contact'
 import './index.css'
 
@@ -32,6 +33,7 @@ function App() {
         <WhatIDo />
         <Skills />
         <Projects />
+        <Education />
         <Contact />
       </div>
     </ThemeContext.Provider>
