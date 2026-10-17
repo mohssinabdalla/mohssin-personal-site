@@ -1,7 +1,8 @@
 import { useState, useEffect } from 'react'
 import { useTranslation } from 'react-i18next'
 
-const INITIAL = { name: '', email: '', message: '' }
+const INITIAL = { name: '', email: '', message: '', website: '' }
+const EMAIL = 'mohssinabdalla1@gmail.com'
 
 export default function Contact() {
   const { t } = useTranslation()
@@ -25,13 +26,10 @@ export default function Contact() {
     setStatus('sending')
 
     try {
-      const res = await fetch('/', {
+      const res = await fetch('/api/send-email', {
         method: 'POST',
-        headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
-        body: new URLSearchParams({
-          'form-name': 'contact',
-          ...form,
-        }).toString(),
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(form),
       })
 
       if (res.ok) {
@@ -52,7 +50,7 @@ export default function Contact() {
   }
 
   const focusStyle = (e) => (e.target.style.borderColor = 'rgba(59,130,246,0.5)')
-  const blurStyle = (e) => (e.target.style.borderColor = 'rgba(255,255,255,0.08)')
+  const blurStyle = (e) => (e.target.style.borderColor = 'rgba(0,0,0,0.08)')
 
   return (
     <section id="contact" className="py-24 relative">
@@ -66,19 +64,16 @@ export default function Contact() {
           <p className="text-blue-500 text-sm font-medium tracking-widest uppercase mb-3">{t('contact.label')}</p>
           <h2 className="text-3xl md:text-4xl font-bold text-slate-900 dark:text-white mb-5">{t('contact.title')}</h2>
           <p className="text-slate-500 dark:text-white/50 leading-relaxed">{t('contact.subtitle')}</p>
+          <a href={`mailto:${EMAIL}`} className="inline-block mt-4 text-sm text-blue-500 hover:text-blue-400 transition-colors">
+            {EMAIL}
+          </a>
         </div>
-
-        {/* Hidden form for Netlify to detect at build time */}
-        <form name="contact" data-netlify="true" netlify-honeypot="bot-field" hidden>
-          <input type="text" name="name" />
-          <input type="email" name="email" />
-          <textarea name="message" />
-        </form>
 
         {/* Visible form */}
         <form onSubmit={handleSubmit} className="relative space-y-4">
-          <input type="hidden" name="form-name" value="contact" />
-          <p hidden><input name="bot-field" /></p>
+          {/* Honeypot — hidden from people, bots tend to fill it */}
+          <input type="text" name="website" value={form.website} onChange={handleChange}
+            tabIndex={-1} autoComplete="off" aria-hidden="true" className="hidden" />
 
           <div className="grid sm:grid-cols-2 gap-4">
             <input
